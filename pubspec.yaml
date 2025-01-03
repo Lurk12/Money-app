@@ -1,0 +1,45 @@
+name: money_application
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.4.0 <4.0.0'
+
+dependencies:
+  email_validator: ^3.0.0
+  error_stack: ^1.9.0
+  flutter:
+    sdk: flutter
+  flutter_otp_text_field: ^1.1.3+2
+  google_fonts: ^6.2.1
+  image_picker: ^1.1.2
+  smooth_page_indicator: ^1.2.0+3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/combined-shape.png
+    - assets/images/money.png
+    - assets/images/small-start-logo.png
+    - assets/images/Logo-White 1.png
+    - assets/images/large-start-logo.png
+    - assets/images/holding-phone.png
+    - assets/images/profile-image.png
+    - assets/images/white.png
+    - assets/images/Saving 1.png
+    - assets/images/Ellipse 10.png
+    - assets/images/Mask group.png
+    - assets/images/Safety Box 1.png
+    - assets/images/Trading 1.png
+    - assets/images/Ellipse 5.png
+    - assets/images/Ellipse 4.png
+    - assets/images/Ellipse 98.png
+    - assets/images/Ellipse 99.png
+
