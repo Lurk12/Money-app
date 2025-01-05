@@ -3,12 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 // ignore: must_be_immutable
 class DashboardButton extends StatelessWidget {
-   DashboardButton({super.key, required this.text, this.height= 75, this.width= 170});
+  DashboardButton(
+      {super.key, required this.text, this.height = 75, this.width = 170});
 
   final String text;
   double height;
   double width;
-
 
   @override
   Widget build(BuildContext context) {
@@ -48,27 +48,32 @@ class DashboardButton extends StatelessWidget {
           ),
         ),
         Positioned(
-          right: 0,
-    
-          child:ClipRRect(
-            borderRadius:const BorderRadius.only(topRight: Radius.circular(35),),
-            child:  Image.asset(
-            'assets/images/Ellipse 98.png',
-          ),
-          ) 
-          
-        
-        ),
+            right: 0,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topRight: Radius.circular(35),
+              ),
+              child: Image.asset(
+                'assets/images/Ellipse 98.png',
+              ),
+            )),
         Positioned(
-          right: 0,
-          bottom: 0,
-          child: ClipRRect(
-            borderRadius:const BorderRadius.only(bottomRight: Radius.circular(35),),
-            child:  Image.asset(
-            'assets/images/Ellipse 99.png',
-          ),
-          ) 
-        )
+            right: 0,
+            bottom: 0,
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                bottomRight: Radius.circular(35),
+              ),
+              child: Image.asset(
+                'assets/images/Ellipse 99.png',
+              ),
+            ),
+            ),
+            const Positioned(
+              right: 30,
+              bottom: 60,
+              child: Icon(Icons.keyboard_arrow_right_outlined, color: Colors.white, size: 30,),
+            ),
       ],
     );
   }

@@ -27,8 +27,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ),
       ),
       drawer: const Drawer(
-    
-        child:  NavDrawer(),
+        child: NavDrawer(),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -47,7 +46,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ),
               height: 200,
               alignment: Alignment.centerLeft,
-              padding: const EdgeInsets.only(left: 40, top: 10),
+              padding: const EdgeInsets.only(left: 40, top: 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -59,10 +58,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                 const Padding(
-                    padding: EdgeInsets.only(bottom:130, right: 25),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 130, right: 25),
                     child: CircleAvatar(
-                      backgroundImage: AssetImage('assets/images/white.png'), // Example profile image
+                      backgroundImage: AssetImage(
+                          'assets/images/white.png'), // Example profile image
                       radius: 30,
                     ),
                   ),
@@ -80,40 +80,43 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(25),
                   ),
-                   
                   child: Padding(
                     padding: const EdgeInsets.all(20),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(
-                          'Your total balance',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black54,
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            'Your total balance',
+                            style: GoogleFonts.montserrat(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black54,
+                            ),
                           ),
                         ),
                         const SizedBox(height: 8),
-                        Text(
-                          '€8500,00',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 28,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.blueAccent,
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            '€8500,00',
+                            style: GoogleFonts.montserrat(
+                              fontSize: 28,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.blueAccent,
+                            ),
                           ),
                         ),
                         const SizedBox(height: 20),
                         // Placeholder for the chart or graph
                         SizedBox(
-                          height: 80,
+                          height: 150,
                           width: double.infinity,
                           // Example color for the chart area
                           child: Center(
-                            child: Text(
-                              'Chart Area',
-                              style: GoogleFonts.montserrat(color: Colors.blue[700]),
-                            ),
+                            
+                            child:Image.asset('assets/images/Columns.png')
                           ),
                         ),
                       ],
@@ -122,16 +125,30 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 10,),
-            DashboardButton(text: '          Check your\n          bank accounts', height: 150, width: 350),
+            const SizedBox(
+              height: 10,
+            ),
+            GestureDetector(
+              onTap: (){
+                //NaVIGATE TO THE BANK ACCOUNT SCREEN
+              },
+                child: DashboardButton(
+                    text: '          Check your\n          bank accounts',
+                    height: 150,
+                    width: 350)),
             const SizedBox(height: 50),
-           BottomNavigationBar(items:const[
-            BottomNavigationBarItem(icon: Icon(Icons.account_balance_wallet_outlined), label: 'Account'),
-            BottomNavigationBarItem(icon: Icon(Icons.notifications_none),label: 'Notification'),
-            BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profile'),
-           ] , currentIndex: 0, onTap: (index) {
-          
-           }),
+            BottomNavigationBar(
+               showSelectedLabels: false, // Hides the label for the selected item
+        showUnselectedLabels: false,
+              items: const [
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.account_balance_wallet_outlined),
+                  label: 'Account'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.notifications_none), label: 'Notification'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.person_outline), label: 'Profile'),
+            ], currentIndex: 0, onTap: (index) {}),
           ],
         ),
       ),
