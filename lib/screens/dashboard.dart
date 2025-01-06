@@ -11,6 +11,17 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
+  int _selectedIndex = 0;
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  if (_selectedIndex == 1) {
+    Navigator.pushNamed(context, '/notification');
+  }else if(_selectedIndex == 2){
+    Navigator.pushNamed(context, '/profile');
+  }
+}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +38,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ),
       ),
       drawer: const Drawer(
+      shadowColor: Colors.white,
         child: NavDrawer(),
       ),
       body: SingleChildScrollView(
@@ -115,9 +127,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           width: double.infinity,
                           // Example color for the chart area
                           child: Center(
-                            
-                            child:Image.asset('assets/images/Columns.png')
-                          ),
+                              child: Image.asset('assets/images/Columns.png')),
                         ),
                       ],
                     ),
@@ -129,26 +139,39 @@ class _DashboardScreenState extends State<DashboardScreen> {
               height: 10,
             ),
             GestureDetector(
-              onTap: (){
-                //NaVIGATE TO THE BANK ACCOUNT SCREEN
-              },
+                onTap: () {
+                  //NaVIGATE TO THE BANK ACCOUNT SCREEN
+                },
                 child: DashboardButton(
                     text: '          Check your\n          bank accounts',
                     height: 150,
                     width: 350)),
             const SizedBox(height: 50),
             BottomNavigationBar(
-               showSelectedLabels: false, // Hides the label for the selected item
-        showUnselectedLabels: false,
+              showSelectedLabels:
+                  false, // Hides the label for the selected item
+              showUnselectedLabels: false,
               items: const [
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.account_balance_wallet_outlined),
-                  label: 'Account'),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.notifications_none), label: 'Notification'),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.person_outline), label: 'Profile'),
-            ], currentIndex: 0, onTap: (index) {}),
+                BottomNavigationBarItem(
+                    icon: Icon(
+                      Icons.account_balance_wallet_outlined,
+                    ),
+                    label: 'Account'),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.notifications_none),
+                    label: 'Notification'),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.person_outline), label: 'Profile'),
+              ],
+              currentIndex: 0,
+              onTap: (index) {
+                if (index == 1) {
+                  Navigator.pushNamed(context, '/notification');
+                } else if (index == 2) {
+                  Navigator.pushNamed(context, '/profile');
+                }
+              },
+            ),
           ],
         ),
       ),

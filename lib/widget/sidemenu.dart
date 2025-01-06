@@ -27,15 +27,21 @@ class NavDrawer extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text(
-                              'Grace Olatunde',
-                              style: GoogleFonts.montserrat(
-                                  fontSize: 19, fontWeight: FontWeight.bold),
-                              overflow: TextOverflow.ellipsis,
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                'Tunde Babs',
+                                style: GoogleFonts.montserrat(
+                                    fontSize: 19, fontWeight: FontWeight.bold),
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
-                            const Text(
-                              '@grace_olatunde',
-                              overflow: TextOverflow.ellipsis,
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: const Text(
+                                '@tunde_babs',
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             )
                           ],
                         ),
@@ -143,12 +149,23 @@ class NavDrawer extends StatelessWidget {
           OutlinedButton(
             onPressed: () {},
             style: OutlinedButton.styleFrom(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-              fixedSize: const Size(270, 70)
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(25)),
+                fixedSize: const Size(270, 70)),
+            child: Row(
+              children: [
+                Text(
+                  'Sign Out',
+                  style: GoogleFonts.montserrat(
+                    fontSize: 20
+                  ),
+                ),
+                const SizedBox(
+                  width: 70,
+                ),
+                Icon(Icons.logout)
+              ],
             ),
-            child: Text('Sign Out', style: GoogleFonts.montserrat(
-
-            ),),
           )
         ],
       ),
