@@ -36,9 +36,9 @@ class NavDrawer extends StatelessWidget {
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
-                            Align(
+                            const Align(
                               alignment: Alignment.centerLeft,
-                              child: const Text(
+                              child: Text(
                                 '@tunde_babs',
                                 overflow: TextOverflow.ellipsis,
                               ),
@@ -149,21 +149,25 @@ class NavDrawer extends StatelessWidget {
           OutlinedButton(
             onPressed: () {},
             style: OutlinedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25)),
-                fixedSize: const Size(270, 70)),
+              foregroundColor: const Color.fromRGBO(39, 67, 253, 1),
+              side: const BorderSide(color: Color.fromRGBO(39, 67, 253, 1)),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(35),
+              ),
+              fixedSize: const Size(250, 80),
+            ),
             child: Row(
               children: [
                 Text(
                   'Sign Out',
                   style: GoogleFonts.montserrat(
-                    fontSize: 20
-                  ),
+                      fontSize: 20,
+                      color: const Color.fromRGBO(39, 67, 253, 1)),
                 ),
                 const SizedBox(
                   width: 70,
                 ),
-                Icon(Icons.logout)
+                const Icon(Icons.logout)
               ],
             ),
           )

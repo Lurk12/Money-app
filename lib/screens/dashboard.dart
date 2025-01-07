@@ -38,7 +38,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ),
       ),
       drawer: const Drawer(
-      shadowColor: Colors.white,
+        
         child: NavDrawer(),
       ),
       body: SingleChildScrollView(
